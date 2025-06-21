@@ -12,7 +12,6 @@ This is my personal portfolio showcasing my work as a Full Stack Developer. It i
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
 - **Package Manager**: Bun
-- **Deployment**: Vercel (or your preferred platform)
 
 ## Getting Started
 
