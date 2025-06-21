@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-light-hover: #fcf4ff;
+    --color-dark-hover: #2a004a;
+    --color-dark-theme: #11001f;
+
+    --font-outfit: 'Outfit Variable', sans-serif;
+    --font-ovo: 'Ovo', serif;
+
+    --shadow-black: 4px 4px 0 #000;
+    --shadow-white: 4px 4px 0 #fff;
+
+    --grid-cols-auto: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+.contact-input {
+    @apply flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white
+}
+
+.contact-textarea {
+    @apply w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6
+}
+
+.contact-btn {
+    @apply py-3 px-8 w-max flex items-center cursor-pointer justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500
+}
+
+.footer-links {
+    @apply text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6
+}
+
+.footer-links-container {
+    @apply flex items-center gap-10 justify-center mt-4 sm:mt-0
+}
+
+/* * {
+    font-family: 'Outfit Variable', sans-serif;
+} */
