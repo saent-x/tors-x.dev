@@ -1,38 +1,42 @@
-# sv
+# Personal Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+My personal portfolio website built with SvelteKit and Tailwind CSS.
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+This is my personal portfolio showcasing my work as a Full Stack Developer. It includes sections for my background, services, projects, and contact information.
+
+## Tech Stack
+
+- **Framework**: SvelteKit
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Package Manager**: Bun
+- **Deployment**: Vercel (or your preferred platform)
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+3. Start the development server:
+   ```bash
+   bun run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Build for Production
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+bun run build
 ```
 
-## Developing
+## License
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This project is free to use for personal and commercial purposes.
 
-```bash
-npm run dev
+## Contact
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Feel free to reach out if you have any questions or would like to collaborate on a project.
