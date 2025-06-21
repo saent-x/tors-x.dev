@@ -9,6 +9,19 @@
 
     import '@fontsource-variable/outfit';
     import '@fontsource/ovo';
+
+    import { theme } from '$lib/stores.svelte';
+
+    $effect(() => {
+        if (theme.isDarkMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = '';
+        }
+    });
+
 </script>
 
 <div class="leading-8 overflow-x-hidden">

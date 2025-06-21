@@ -1,7 +1,11 @@
 <script lang="ts">
     import type { Work } from "$lib/index";
+
     import sendIcon from "/src/assets/send-icon.png?enhanced";
     import rightArrowBold from "/src/assets/right-arrow-bold.png?enhanced";
+    import rightArrowBoldDark from "/src/assets/right-arrow-bold-dark.png?enhanced";
+    
+    import { theme } from '$lib/stores.svelte';
 
     const workData: Work[] = [
         {
@@ -40,7 +44,7 @@
         of projects showcasing my expertise in full-stack development.
     </p>
 
-    <div class="grid grid-cols-[var(--grid-cols-auto)] my-10 gap-5">
+    <div class="grid grid-cols-[var(--grid-cols-auto)] my-10 gap-5 dark:text-black">
         {#each workData as work (work.id)}
             <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" style="background-image: url({work.bgImage});">
                 <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
@@ -56,7 +60,12 @@
         {/each}
     </div>
 
-    <a href="/" class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] rounded-full py-3 px-10 mx-auto my-20 hover:bg-light-hover duration-500">
-        Show more <enhanced:img class="w-4" src={rightArrowBold} alt="right arrow" />
+    <a href="/" class="w-max flex items-center justify-center gap-2 dark:text-white text-gray-700 border-[0.5px] rounded-full py-3 px-10 mx-auto my-20 hover:bg-light-hover duration-500 dark:border-white dark:hover:bg-dark-hover">
+        Show more 
+        {#if theme.isDarkMode && theme.isInitialized}
+            <enhanced:img class="w-4" src={rightArrowBoldDark} alt="right arrow" />
+        {:else}
+            <enhanced:img class="w-4" src={rightArrowBold} alt="right arrow" />
+        {/if}
     </a>
 </div>

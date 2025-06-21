@@ -14,16 +14,18 @@
     --grid-cols-auto: repeat(auto-fit, minmax(200px, 1fr))
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .contact-input {
-    @apply flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white
+    @apply flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-dark-hover/30 dark:border-white/90
 }
 
 .contact-textarea {
-    @apply w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6
+    @apply w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-dark-hover/30 dark:border-white/90
 }
 
 .contact-btn {
-    @apply py-3 px-8 w-max flex items-center cursor-pointer justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500
+    @apply py-3 px-8 w-max flex items-center cursor-pointer justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-dark-hover
 }
 
 .footer-links {
@@ -32,6 +34,54 @@
 
 .footer-links-container {
     @apply flex items-center gap-10 justify-center mt-4 sm:mt-0
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.heart {
+  position: absolute;
+  top: 25px;
+  right: 8px;
+  left: 1;
+  width: 6.3px;
+  height: 6.3px;
+  z-index: 2;
+  pointer-events: none;
+  display: inline-block;
+  background: red;
+  transform: translate(50%, -50%) rotate(-45deg);
+  animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 6.3px;
+  height: 6.3px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -3.15px;
+  left: 0;
+}
+
+.heart::after {
+  left: 3.15px;
+  top: 0;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1) rotate(-45deg);}
+  20% { transform: scale(1.2) rotate(-45deg);}
+  40% { transform: scale(0.95) rotate(-45deg);}
+  60% { transform: scale(1.1) rotate(-45deg);}
+  80% { transform: scale(0.98) rotate(-45deg);}
 }
 
 /* * {

@@ -7,7 +7,10 @@
 
 <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
     <div>
-        <enhanced:img class="rounded-full w-32" src={profileImg} alt="profile"/>
+        <div class="profile-img-container relative inline-block">
+            <enhanced:img class="rounded-full w-32" src={profileImg} alt="profile"/>
+            <span class="heart"></span>
+        </div>
     </div>
 
     <h3 class="flex items-center gap-2 text-xl md:text-2xl mb-3 font-ovo">
@@ -24,11 +27,11 @@
     </p>
 
     <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-        <a class="px-10 py-3 border rounded-full text-white border-white flex items-center gap-2 bg-black" href="#contact">
+        <a class="px-10 py-3 border rounded-full text-white border-white flex items-center gap-2 bg-black dark:bg-transparent" href="#contact">
             contact me <enhanced:img class="w-4" src={rightArrowWhite} alt="right arrow icon"/>
         </a>
         <a 
-            class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2" 
+            class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark: text-black" 
             href="/static/assets/public/sample-resume.pdf" download>
             my resume <enhanced:img class="w-4" src={downloadIcon} alt="download icon"/>
         </a>

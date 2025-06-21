@@ -11,7 +11,7 @@
         { id: 1, icon: web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
         { id: 2, icon: mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
         { id: 3, icon: ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-        { id:4, icon: graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+        { id: 4, icon: graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
     ]
 </script>
 
@@ -27,10 +27,10 @@
 
     <div class="grid grid-cols-[var(--grid-cols-auto)] gap-6 my-10">
         {#each serviceData as service (service.id) }
-            <div class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500">
+            <div class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 dark:hover:bg-dark-hover dark:hover:shadow-white">
                 <enhanced:img class="w-10" src={service.icon} alt={service.title} />
-                <h3 class="text-lg my-4 text-gray-700">{service.title}</h3>
-                <p class="text-sm text-gray-600 leading-5">{service.description}</p>
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white">{service.title}</h3>
+                <p class="text-sm text-gray-600 leading-5 dark:text-white/80">{service.description}</p>
                 <a class="flex items-center gap-2 text-sm mt-5" href={service.link}>
                     Read more <enhanced:img class="w-4" alt="right arrow" src={rightArrow}/>
                 </a>

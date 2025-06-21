@@ -28,7 +28,7 @@
     }
 </script>
 
-<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/assets/public/footer-bg-color.png')] bg-no-repeact bg-center bg-[length:90%_auto">
+<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/assets/public/footer-bg-color.png')] dark:bg-none bg-no-repeact bg-center bg-[length:90%_auto">
     <h4 class="text-center mb-2 text-lg font-ovo">Connect with me</h4>
     <h2 class="text-center text-5xl font-ovo">Get in touch</h2>
 
