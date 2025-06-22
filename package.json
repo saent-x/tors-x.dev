@@ -37,6 +37,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/outfit": "^5.2.6",
-		"@fontsource/ovo": "^5.2.6"
+		"@fontsource/ovo": "^5.2.6",
+		"motion": "^12.18.1"
 	}
 }
