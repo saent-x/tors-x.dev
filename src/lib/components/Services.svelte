@@ -3,17 +3,17 @@
 
     import web_icon from "/src/assets/web-icon.png?enhanced";
     import mobile_icon from "/src/assets/mobile-icon.png?enhanced";
-    import ui_icon from "/src/assets/ui-icon.png?enhanced";
-    import graphics_icon from "/src/assets/graphics-icon.png?enhanced";
+    import desktop_icon from "/src/assets/desktop-icon.png?enhanced";
+    import backend_icon from "/src/assets/backend-icon.png?enhanced";
     import rightArrow from "/src/assets/right-arrow.png?enhanced";
     
     import { animate, inView, hover} from "motion";
 
     const serviceData: Service[] = [
-        { id: 1, icon: web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-        { id: 2, icon: mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-        { id: 3, icon: ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-        { id: 4, icon: graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+        { id: 1, icon: web_icon, title: 'Web development', description: 'Web app development with responsive and efficient UI/UX for users.', link: '' },
+        { id: 2, icon: mobile_icon, title: 'Mobile app', description: 'Cross platform mobile app development focusing on performance.', link: '' },
+        { id: 3, icon: desktop_icon, title: 'Desktop app', description: 'Cross platform desktop app development with seamless UI/UX functionality.', link: '' },
+        { id: 4, icon: backend_icon, title: 'Backend services', description: 'Full-stack backend development including API design, database architecture, server deployment, and cloud infrastructure management.', link: '' },
     ]
     
     $effect(() => {

@@ -9,10 +9,14 @@
     import icon3Dark from "/src/assets/project-icon-dark.png?enhanced";
 
     import vscode from "/src/assets/vscode.png?enhanced";
-    import firebase from "/src/assets/firebase.png?enhanced";
     import mongodb from "/src/assets/mongodb.png?enhanced";
-    import figma from "/src/assets/figma.png?enhanced";
-    import git from "/src/assets/git.png?enhanced";
+    import rust from "/src/assets/rust.png?enhanced";
+    import typescript from "/src/assets/typescript.png?enhanced";
+    import c_sharp from "/src/assets/c-sharp.png?enhanced";
+    import postgres from "/src/assets/postgres.png?enhanced";
+    import supabase from "/src/assets/supabase.png?enhanced";
+    import react from "/src/assets/react.png?enhanced";
+    import svelte from "/src/assets/svelte.png?enhanced";
     import userImage from "/src/assets/user-image.png?enhanced";
 
     import { theme } from '$lib/stores.svelte';
@@ -21,11 +25,12 @@
     const infoList: Info[] = [
         { id: 1, icon: icon1 , iconDark: icon1Dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js, Svelte' },
         { id: 2, icon: icon2, iconDark: icon2Dark, title: 'Education', description: 'BSc. in Computer Science, MSc. Cyber Security' },
-        { id: 3, icon: icon3, iconDark: icon3Dark, title: 'Projects', description: 'Built more than 5 projects' }
+        { id: 3, icon: icon3, iconDark: icon3Dark, title: 'Projects', description: 'Built 5+ enterprise projects' }
     ];
 
     const tools: Tool[] = [
-        {id: 1, icon: vscode}, {id: 2, icon: firebase}, {id: 3, icon: mongodb}, {id: 4, icon: figma}, {id: 5, icon: git}
+        {id: 1, icon: vscode}, {id: 2, icon: supabase}, {id: 3, icon: mongodb}, {id: 4, icon: postgres}, {id: 5, icon: react},
+        {id: 6, icon: svelte}, {id: 7, icon: typescript}, {id: 8, icon: c_sharp}, {id: 9, icon: rust}
     ];
     
     $effect(() => {
@@ -38,14 +43,14 @@
       
       animate('#about-header-1', { y: -20, opacity: 0 }, { duration: 0 });
       inView('#about-header-1', (el) => {
-        animate(el, { y: 0, opacity: 1 }, { duration: 0.3});
+        animate(el, { y: 0, opacity: 1 }, { duration: 0.5, delay: 0.3 });
           
         return () => animate(el, {y: -20, opacity: 0 })
       });
       
       animate('#about-header-2', { y: -20, opacity: 0 }, { duration: 0 });
       inView('#about-header-2', (el) => {
-        animate(el, { y: 0, opacity: 1 }, { duration: 0.5, delay: 0.5});
+        animate(el, { y: 0, opacity: 1 }, { duration: 0.5, delay: 0.5 });
           
         return () => animate(el, {y: -20, opacity: 0 })
       });
@@ -117,7 +122,7 @@
             <enhanced:img class="w-full rounded-3xl" src={userImage} alt="user"/>
         </div>
         <div id="about-details" class="flex-1">
-            <p class="mb-10 max-w-2xl font-ovo">
+            <p class="mb-10 max-w-2xl font-ovo text-justify">
                 I am an experienced Software Engineer with 6+ years of professional 
                 expertise spanning full-stack development and cybersecurity. Throughout my career, 
                 I have had the privilege of collaborating with prestigious organizations including
@@ -141,7 +146,7 @@
             </ul>
 
             <h4 class="my-6 text-gray-700 font-ovo dark:text-white/80">Tools I use</h4>
-            <ul id="info-tool" class="flex items-center gap-3 sm:gap-5">
+            <ul id="info-tool" class="flex items-center gap-3 sm:gap-5 flex-wrap">
                 {#each tools as tool (tool.id)}
                     <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
                         <enhanced:img class="w-5 sm:w-7" src={tool.icon} alt="tool"/>

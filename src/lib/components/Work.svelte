@@ -13,19 +13,19 @@
         {
             id: 1,
             title: 'St. Faus',
-            description: 'Web App',
+            description: 'Web & Mobile App',
             bgImage: "/assets/public/work-1.png",
         },
         {
             id: 2,
-            title: 'Geo based app',
-            description: 'Mobile App',
+            title: 'PrepMe',
+            description: 'Web App',
             bgImage: "/assets/public/work-2.png",
         },
         {
             id: 3,
-            title: 'Photography site',
-            description: 'Web Design',
+            title: 'Golang NN library',
+            description: 'Library',
             bgImage: "/assets/public/work-3.png",
         },
         {

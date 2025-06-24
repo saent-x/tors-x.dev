@@ -86,7 +86,7 @@
         return () => animate(el, {y: 100, opacity: 0 })
       });
       
-      animate('.contact-btnn', { scale: 1 }, { duration: 0 });
+      animate('.contact-btn', { scale: 1 }, { duration: 0 });
       hover('.contact-btn', (el) => {
         animate(el, { scale: 1.05 }, { duration: 0.3});
           
