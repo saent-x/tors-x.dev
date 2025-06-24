@@ -53,7 +53,7 @@
 		class={`hidden items-center gap-6 rounded-full px-12 py-3 md:flex lg:gap-8 ${isScroll ? '' : 'bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent'}`}
 	>
 		<li><a class="font-ovo" href="#top" aria-label="home">Home</a></li>
-		<li><a class="font-ovo" href="#blog" aria-label="blog">Blog</a></li>
+		<!-- <li><a class="font-ovo" href="#blog" aria-label="blog">Blog</a></li> -->
 		<li><a class="font-ovo" href="#services" aria-label="about me">Services</a></li>
 		<li><a class="font-ovo" href="#about-me" aria-label="about me">About me</a></li>
 		<li><a class="font-ovo" href="#work" aria-label="my work">My Work</a></li>
@@ -112,7 +112,7 @@
 		</div>
 
 		<li><a class="font-ovo" onclick={closeMenu} href="#top" aria-label="home">Home</a></li>
-		<li><a class="font-ovo" onclick={closeMenu} href="#blog" aria-label="blog">Blog</a></li>
+		<!-- <li><a class="font-ovo" onclick={closeMenu} href="#blog" aria-label="blog">Blog</a></li> -->
 		<li>
 			<a class="font-ovo" onclick={closeMenu} href="#services" aria-label="about me">Services</a>
 		</li>
