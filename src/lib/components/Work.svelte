@@ -14,19 +14,19 @@
             id: 1,
             title: 'St. Faus',
             description: 'Web & Mobile App',
-            bgImage: "/assets/public/work-1.png",
+            bgImage: "/assets/public/stfaus.png",
         },
         {
             id: 2,
             title: 'PrepMe',
             description: 'Web App',
-            bgImage: "/assets/public/work-2.png",
+            bgImage: "/assets/public/prepme.png",
         },
         {
             id: 3,
             title: 'Golang NN library',
             description: 'Library',
-            bgImage: "/assets/public/work-3.png",
+            bgImage: "/assets/public/nn-library.png",
         },
         {
             id: 4,
@@ -100,7 +100,7 @@
     <div id="work-data" class="grid grid-cols-[var(--grid-cols-auto)] my-10 gap-5 dark:text-black">
         {#each workData as work (work.id)}
             <div id="work-item" class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" style="background-image: url({work.bgImage});">
-                <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                <div class="bg-[#FAF9F6] w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                     <div>
                         <h2 class="font-semibold">{work.title}</h2>
                         <p class="text-sm text-gray-700">{work.description}</p>
