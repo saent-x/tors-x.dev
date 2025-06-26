@@ -1,5 +1,6 @@
 <script lang="ts">
     import { PUBLIC_WEBFORMS_ACCESS_KEY } from "$env/static/public";
+    import { onMount } from "svelte";
     import rightArrowWhite from "../../assets/right-arrow-white.png?enhanced";
 
     import { animate, inView, hover} from "motion";
@@ -29,7 +30,7 @@
         }
     }
     
-    $effect(() => {
+    onMount(() => {
       animate('#contact', { opacity: 0 }, { duration: 0 });
       inView('#contact', (el) => {
         animate(el, { opacity: 1 }, { duration: 1 });

@@ -1,6 +1,9 @@
 <script lang="ts">
   import { animate, inView } from 'motion';
   import { onMount } from 'svelte';
+  
+  let subscribing = $state(false);
+  let subscribe_text = $state('');
 
   // Blog posts data - in a real app, this would come from a CMS or API
   const blogPosts = [
@@ -72,7 +75,7 @@
     });
 
     // Animate individual post cards
-    const postCards = document.querySelectorAll('.post-card');
+    const postCards: NodeListOf<Element> = document.querySelectorAll('.post-card');
     postCards.forEach((card, index) => {
       animate(card, { scale: 0.9, opacity: 0 });
       inView(card, (el) => {
@@ -109,21 +112,6 @@
 </svelte:head>
 
 <div class="dark:bg-dark-theme min-h-screen bg-white text-gray-900 dark:text-white">
-  <!-- Navigation back to main site -->
-  <!-- <nav
-    class="dark:bg-dark-theme/80 fixed top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg dark:border-white/20"
-  >
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a
-        href="/"
-        class="font-ovo text-lg transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-      >
-        ← Back to Portfolio
-      </a>
-      <div class="font-ovo text-lg font-semibold">Blog</div>
-    </div>
-  </nav> -->
-
   <!-- Hero Section -->
   <section class="blog-hero px-6 pt-24 pb-16">
     <div class="mx-auto max-w-6xl text-center">
@@ -147,11 +135,11 @@
             <article class="post-card group">
               <a href="/blog/{post.slug}" class="block">
                 <div
-                  class="dark:bg-dark-hover/30 h-full rounded-lg border border-gray-200 bg-gray-50 p-8 transition-all duration-300 hover:border-gray-300 hover:shadow-lg dark:border-white/10 dark:hover:border-white/20 dark:hover:shadow-white/5"
+                  class="dark:bg-dark-hover/30 h-full rounded-lg border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-gray-300 hover:shadow-lg dark:border-white/10 dark:hover:border-white/20 dark:hover:shadow-white/5"
                 >
                   <div class="mb-4 flex items-center gap-4">
                     <span
-                      class="font-outfit rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
+                      class="font-outfit rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-700 dark:text-gray-300"
                     >
                       {post.category}
                     </span>
@@ -172,7 +160,7 @@
                       {formatDate(post.date)}
                     </time>
                     <span
-                      class="font-outfit text-sm text-blue-600 transition-transform group-hover:translate-x-1 dark:text-blue-400"
+                      class="font-outfit text-sm text-gray-600 transition-transform hover:underline group-hover:translate-x-1 dark:text-blue-400"
                     >
                       Read more →
                     </span>
@@ -223,7 +211,7 @@
                       {formatDate(post.date)}
                     </time>
                     <span
-                      class="font-outfit text-sm text-blue-600 transition-transform group-hover:translate-x-1 dark:text-blue-400"
+                      class="font-outfit text-sm text-gray-600 hover:underline transition-transform group-hover:translate-x-1 dark:text-blue-400"
                     >
                       Read more →
                     </span>
@@ -252,13 +240,29 @@
           class="font-outfit dark:bg-dark-hover/30 flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-white/20 dark:text-white dark:placeholder-gray-400"
         />
         <button
-          class="font-outfit rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+          class="font-outfit rounded-full bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800 cursor-pointer"
+          disabled={subscribing}
+          onclick={() => {
+            subscribing = true;
+            
+            let interval_id = setInterval(() => {              
+              if (subscribe_text === 'subscribed!'){                
+                subscribe_text = '';
+                clearInterval(interval_id);
+              }else{
+                subscribe_text = 'subscribed!';
+                subscribing = false;
+              }
+            }, 2000);            
+          }}
         >
-          Subscribe
+          {subscribing ? 'Subscribing' : 'Subscribe'}
         </button>
       </div>
     </div>
   </section>
+  
+  <p class="text-center text-lg font-ovo pt-5">{subscribe_text}</p>
 </div>
 
 <style>

@@ -21,6 +21,7 @@
 
     import { theme } from '$lib/stores.svelte';
     import { animate, inView, hover} from "motion";
+    import { onMount } from "svelte";
 
     const infoList: Info[] = [
         { id: 1, icon: icon1 , iconDark: icon1Dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js, Svelte' },
@@ -33,7 +34,7 @@
         {id: 6, icon: svelte}, {id: 7, icon: typescript}, {id: 8, icon: c_sharp}, {id: 9, icon: rust}
     ];
     
-    $effect(() => {
+    onMount(() => {
       animate('#about-me', { opacity: 0 }, { duration: 0 });
       inView('#about-me', (el) => {
         animate(el, { opacity: 1 }, { duration: 1 });

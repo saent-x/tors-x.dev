@@ -8,12 +8,13 @@
     import { theme } from '$lib/stores.svelte';
     
     import { animate, inView, hover} from "motion";
+    import { onMount } from "svelte";
 
     const workData: Work[] = [
         {
             id: 1,
             title: 'St. Faus',
-            description: 'Web & Mobile App',
+            description: 'Web & Desktop App',
             bgImage: "/assets/public/stfaus.png",
         },
         {
@@ -30,13 +31,13 @@
         },
         {
             id: 4,
-            title: 'UI/UX designing',
-            description: 'UI/UX Design',
-            bgImage: "/assets/public/work-4.png",
+            title: 'Codereck',
+            description: 'Web App',
+            bgImage: "/assets/public/codereck.png",
         },
     ]
     
-    $effect(() => {
+    onMount(() => {
       animate('#work', { opacity: 0 }, { duration: 0 });
       inView('#work', (el) => {
         animate(el, { opacity: 1 }, { duration: 1 });

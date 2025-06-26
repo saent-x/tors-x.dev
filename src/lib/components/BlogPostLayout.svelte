@@ -34,7 +34,7 @@
 <div class="dark:bg-dark-theme min-h-screen bg-white text-gray-900 dark:text-white">
 
   <!-- Blog post content -->
-  <article class="mx-auto max-w-4xl px-6 pt-40 pb-16">
+  <article class="mx-auto max-w-4xl px-6 pt-30 pb-16">
     <header class="blog-header mb-12 text-center">
       <h1 class="font-ovo mb-4 text-4xl leading-tight font-bold md:text-5xl">
         {title}

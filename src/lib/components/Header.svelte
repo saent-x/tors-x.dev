@@ -5,8 +5,9 @@
 	import downloadIcon from '/src/assets/download-icon.png?enhanced';
 
 	import { animate, inView } from 'motion';
+    import { onMount } from 'svelte';
 
-	$effect(() => {
+	onMount(() => {
       animate('.profile-img-container', { scale: 0 });
       inView('.profile-img-container', (el) => {
         animate(el, { scale: 1 }, { duration: 0.8, type: 'spring', stiffness: 100 });

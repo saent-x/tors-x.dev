@@ -8,6 +8,7 @@
     import rightArrow from "/src/assets/right-arrow.png?enhanced";
     
     import { animate, inView, hover} from "motion";
+    import { onMount } from "svelte";
 
     const serviceData: Service[] = [
         { id: 1, icon: web_icon, title: 'Web development', description: 'Web app development with responsive and efficient UI/UX for users.', link: '' },
@@ -16,7 +17,7 @@
         { id: 4, icon: backend_icon, title: 'Backend services', description: 'Full-stack backend development including API design, database architecture, server deployment, and cloud infrastructure management.', link: '' },
     ]
     
-    $effect(() => {
+    onMount(() => {
       animate('#services', { opacity: 0 }, { duration: 0 });
       inView('#services', (el) => {
         animate(el, { opacity: 1 }, { duration: 1 });
