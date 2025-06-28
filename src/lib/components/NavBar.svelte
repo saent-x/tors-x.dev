@@ -41,7 +41,7 @@
 <nav
   class={`fixed z-50 flex w-full items-center justify-between px-5 py-4 lg:px-8 xl:px-[8%] ${isScroll ? 'dark:bg-dark-theme bg-white/50 shadow-sm backdrop-blur-lg dark:shadow-white/20' : ''} `}
 >
-  <a href="#top" aria-label="navbar">
+  <a href="/" aria-label="navbar">
     {#if theme.isDarkMode && theme.isInitialized}
       <enhanced:img class="mr-14 w-15 cursor-pointer" src={logo_white} alt="logo" />
     {:else}
@@ -52,7 +52,7 @@
   <ul
     class={`hidden items-center gap-6 rounded-full px-12 py-3 md:flex lg:gap-8 ${isScroll ? '' : 'bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent'}`}
   >
-    <li><a class="font-ovo" href="/#top" aria-label="home">Home</a></li>
+    <li><a class="font-ovo" href="/" aria-label="home">Home</a></li>
     <li><a class="font-ovo" href="/blog" aria-label="blog">Blog</a></li>
     <li><a class="font-ovo" href="/#services" aria-label="about me">Services</a></li>
     <li><a class="font-ovo" href="/#about-me" aria-label="about me">About me</a></li>

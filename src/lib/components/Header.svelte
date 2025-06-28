@@ -53,7 +53,6 @@
 </script>
 
 <div
-  id="top"
   class="mx-auto flex h-screen w-11/12 max-w-3xl scroll-mt-20 flex-col items-center justify-center gap-4 text-center"
 >
   <div>
