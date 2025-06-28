@@ -10,42 +10,42 @@
   onMount(() => {
     animate('.profile-img-container', { scale: 0 });
     inView('.profile-img-container', (el) => {
-      animate(el, { scale: 1 }, { duration: 0.8, type: 'spring', stiffness: 100 });
+      animate(el, { scale: 1 }, { duration: 0.4, type: 'spring', stiffness: 100 });
 
       return () => animate(el, { scale: 0 }, { duration: 0 });
     });
 
     animate('#header-greeting', { y: -15, opacity: 0 });
     inView('#header-greeting', (el) => {
-      animate(el, { opacity: 1 }, { duration: 0.8, delay: 0.3 });
+      animate(el, { opacity: 1 }, { duration: 0.4, delay: 0.15 });
 
       return () => animate(el, { y: -15, opacity: 0 });
     });
 
     animate('#header-job-role', { y: -30, opacity: 0 });
     inView('#header-job-role', (el) => {
-      animate(el, { opacity: 1 }, { duration: 0.8, delay: 0.5 });
+      animate(el, { opacity: 1 }, { duration: 0.4, delay: 0.25 });
 
       return () => animate(el, { y: -30, opacity: 0 });
     });
 
     animate('#header-intro', { opacity: 0 }, { duration: 0 });
     inView('#header-intro', (el) => {
-      animate(el, { opacity: 1 }, { duration: 0.6, delay: 0.7 });
+      animate(el, { opacity: 1 }, { duration: 0.3, delay: 0.35 });
 
       return () => animate(el, { opacity: 0 });
     });
 
     animate('#contact-btn', { y: 30, opacity: 0 }, { duration: 0 });
     inView('#contact-btn', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.6, delay: 1 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.3, delay: 0.5 });
 
       return () => animate(el, { y: 30, opacity: 0 });
     });
 
     animate('#resume-btn', { y: 30, opacity: 0 }, { duration: 0 });
     inView('#resume-btn', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.6, delay: 1.2 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.3, delay: 0.6 });
 
       return () => animate(el, { y: 30, opacity: 0 });
     });
@@ -87,7 +87,7 @@
     <a
       id="resume-btn"
       class="dark: flex items-center gap-2 rounded-full border border-gray-500 bg-white px-10 py-3 text-black"
-      href="/static/assets/public/sample-resume.pdf"
+      href="/assets/public/John Paul Vangerwua CV - 2025.docx"
       download
     >
       my resume <enhanced:img class="w-4" src={downloadIcon} alt="download icon" />

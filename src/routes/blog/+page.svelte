@@ -34,23 +34,23 @@
     // Animate hero section
     animate('.blog-hero', { y: -30, opacity: 0 });
     inView('.blog-hero', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.8 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.4 });
       return () => animate(el, { y: -30, opacity: 0 });
     });
 
     // Animate featured posts
-    if(featuredPosts.length > 0){
+    if (featuredPosts.length > 0) {
       animate('.featured-posts', { y: 40, opacity: 0 });
       inView('.featured-posts', (el) => {
-        animate(el, { y: 0, opacity: 1 }, { duration: 0.8, delay: 0.2 });
+        animate(el, { y: 0, opacity: 1 }, { duration: 0.4, delay: 0.1 });
         return () => animate(el, { y: 40, opacity: 0 });
       });
     }
-    
+
     // Animate recent posts
     animate('.recent-posts', { y: 40, opacity: 0 });
     inView('.recent-posts', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.8, delay: 0.4 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.4, delay: 0.2 });
       return () => animate(el, { y: 40, opacity: 0 });
     });
 
@@ -63,8 +63,8 @@
           el,
           { scale: 1, opacity: 1 },
           {
-            duration: 0.6,
-            delay: index * 0.1,
+            duration: 0.3,
+            delay: index * 0.05,
             type: 'spring',
             stiffness: 120
           }

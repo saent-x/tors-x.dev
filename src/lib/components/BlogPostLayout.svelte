@@ -14,13 +14,13 @@
   onMount(() => {
     animate('.blog-content', { y: 30, opacity: 0 });
     inView('.blog-content', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.8, delay: 0.2 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.4, delay: 0.1 });
       return () => animate(el, { y: 30, opacity: 0 });
     });
 
     animate('.blog-header', { y: -20, opacity: 0 });
     inView('.blog-header', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.6 });
+      animate(el, { y: 0, opacity: 1 }, { duration: 0.3 });
       return () => animate(el, { y: -20, opacity: 0 });
     });
   });

@@ -27,9 +27,6 @@ WORKDIR /app
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/src/routes/blog/posts ./blog/posts
 
-# Install production dependencies only
-# RUN bun install --production
-
 # Expose the port the app runs on
 EXPOSE 3000
 
