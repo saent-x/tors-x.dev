@@ -31,7 +31,7 @@
         },
         {
             id: 4,
-            title: 'Codereck',
+            title: 'Coderev',
             description: 'Web App',
             bgImage: "/assets/public/codereck.png",
         },

@@ -55,9 +55,9 @@
     <li><a class="font-ovo" href="/#top" aria-label="home">Home</a></li>
     <li><a class="font-ovo" href="/blog" aria-label="blog">Blog</a></li>
     <li><a class="font-ovo" href="/#services" aria-label="about me">Services</a></li>
-    <li><a class="font-ovo" href="#about-me" aria-label="about me">About me</a></li>
-    <li><a class="font-ovo" href="#work" aria-label="my work">My Work</a></li>
-    <li><a class="font-ovo" href="#contact" aria-label="contact me">Contact me</a></li>
+    <li><a class="font-ovo" href="/#about-me" aria-label="about me">About me</a></li>
+    <li><a class="font-ovo" href="/#work" aria-label="my work">My Work</a></li>
+    <li><a class="font-ovo" href="/#contact" aria-label="contact me">Contact me</a></li>
   </ul>
 
   <div class="flex items-center gap-4">
@@ -111,17 +111,18 @@
       {/if}
     </div>
 
-    <li><a class="font-ovo" onclick={closeMenu} href="#top" aria-label="home">Home</a></li>
+    <li><a class="font-ovo" onclick={closeMenu} href="/#top" aria-label="home">Home</a></li>
     <li><a class="font-ovo" onclick={closeMenu} href="/blog" aria-label="blog">Blog</a></li>
     <li>
-      <a class="font-ovo" onclick={closeMenu} href="#services" aria-label="about me">Services</a>
+      <a class="font-ovo" onclick={closeMenu} href="/#services" aria-label="about me">Services</a>
     </li>
     <li>
-      <a class="font-ovo" onclick={closeMenu} href="#about-me" aria-label="about me">About me</a>
+      <a class="font-ovo" onclick={closeMenu} href="/#about-me" aria-label="about me">About me</a>
     </li>
-    <li><a class="font-ovo" onclick={closeMenu} href="#work" aria-label="my work">My Work</a></li>
+    <li><a class="font-ovo" onclick={closeMenu} href="/#work" aria-label="my work">My Work</a></li>
     <li>
-      <a class="font-ovo" onclick={closeMenu} href="#contact" aria-label="contact me">Contact me</a>
+      <a class="font-ovo" onclick={closeMenu} href="/#contact" aria-label="contact me">Contact me</a
+      >
     </li>
   </ul>
 </nav>

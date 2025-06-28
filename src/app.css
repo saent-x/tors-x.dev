@@ -1,39 +1,39 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-light-hover: #fcf4ff;
-    --color-dark-hover: #2a004a;
-    --color-dark-theme: #11001f;
+  --color-light-hover: #fcf4ff;
+  --color-dark-hover: #2a004a;
+  --color-dark-theme: #11001f;
 
-    --font-outfit: 'Outfit Variable', sans-serif;
-    --font-ovo: 'Ovo', serif;
+  --font-outfit: 'Outfit Variable', sans-serif;
+  --font-ovo: 'Ovo', serif;
 
-    --shadow-black: 4px 4px 0 #000;
-    --shadow-white: 4px 4px 0 #fff;
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
 
-    --grid-cols-auto: repeat(auto-fit, minmax(200px, 1fr))
+  --grid-cols-auto: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 .contact-input {
-    @apply flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-dark-hover/30 dark:border-white/90
+  @apply dark:bg-dark-hover/30 flex-1 rounded-md border-[0.5px] border-gray-400 bg-white p-3 outline-none dark:border-white/90;
 }
 
 .contact-textarea {
-    @apply w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-dark-hover/30 dark:border-white/90
+  @apply dark:bg-dark-hover/30 mb-6 w-full rounded-md border-[0.5px] border-gray-400 bg-white p-4 outline-none dark:border-white/90;
 }
 
 .contact-btn {
-    @apply py-3 px-8 w-max flex items-center cursor-pointer justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-dark-hover
+  @apply dark:hover:bg-dark-hover mx-auto flex w-max cursor-pointer items-center justify-between gap-2 rounded-full bg-black/80 px-8 py-3 text-white duration-500 hover:bg-black dark:border-[0.5px] dark:bg-transparent;
 }
 
 .footer-links {
-    @apply text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6
+  @apply mx-[10%] mt-12 items-center justify-between border-t border-gray-400 py-6 text-center sm:flex;
 }
 
 .footer-links-container {
-    @apply flex items-center gap-10 justify-center mt-4 sm:mt-0
+  @apply mt-4 flex items-center justify-center gap-10 sm:mt-0;
 }
 
 .profile-img-container {
@@ -58,7 +58,7 @@
 
 .heart::before,
 .heart::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 6.3px;
   height: 6.3px;
@@ -77,13 +77,122 @@
 }
 
 @keyframes beat {
-  0%, 100% { transform: scale(1) rotate(-45deg);}
-  20% { transform: scale(1.2) rotate(-45deg);}
-  40% { transform: scale(0.95) rotate(-45deg);}
-  60% { transform: scale(1.1) rotate(-45deg);}
-  80% { transform: scale(0.98) rotate(-45deg);}
+  0%,
+  100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  20% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+  40% {
+    transform: scale(0.95) rotate(-45deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+  80% {
+    transform: scale(0.98) rotate(-45deg);
+  }
 }
 
-/* * {
-    font-family: 'Outfit Variable', sans-serif;
-} */
+/* Blog Post Layout Styles */
+.blog-content h1 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.blog-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.blog-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blog-content blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.blog-content pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Force list styles to display */
+.blog-lists ul {
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  margin-left: 1.5rem !important;
+  padding-left: 0 !important;
+}
+
+.blog-lists ol {
+  list-style-type: upper-alpha !important;
+  list-style-position: outside !important;
+  margin-left: 1.5rem !important;
+  padding-left: 0 !important;
+}
+
+.blog-lists li {
+  display: list-item !important;
+  margin-left: 0 !important;
+  padding-left: 0.5rem !important;
+}
+
+.blog-lists ul ul {
+  list-style-type: circle !important;
+  margin-left: 1.5rem !important;
+}
+
+.blog-lists ol ol {
+  list-style-type: lower-alpha !important;
+  margin-left: 1.5rem !important;
+}

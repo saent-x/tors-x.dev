@@ -1,56 +1,34 @@
 <script lang="ts">
   import { animate, inView } from 'motion';
   import { onMount } from 'svelte';
-  
+
+  interface BlogPost {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    readingTime: number;
+    category: string;
+    featured?: boolean;
+  }
+
+  interface PageData {
+    blogPosts: BlogPost[];
+  }
+
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+
   let subscribing = $state(false);
   let subscribe_text = $state('');
 
-  // Blog posts data - in a real app, this would come from a CMS or API
-  const blogPosts = [
-    {
-      slug: 'building-scalable-web-applications',
-      title: 'Building Scalable Web Applications with Modern JavaScript',
-      description:
-        'Explore the best practices and architectural patterns for creating web applications that can handle millions of users.',
-      date: '2024-01-15',
-      readingTime: 8,
-      category: 'Development',
-      featured: true
-    },
-    {
-      slug: 'mastering-svelte-performance',
-      title: 'Mastering Svelte 5: Performance Optimization Techniques',
-      description:
-        "Deep dive into Svelte 5's new features and learn how to optimize your applications for maximum performance.",
-      date: '2024-01-10',
-      readingTime: 12,
-      category: 'Svelte',
-      featured: true
-    },
-    {
-      slug: 'typescript-advanced-patterns',
-      title: 'Advanced TypeScript Patterns for Better Code Quality',
-      description:
-        'Discover advanced TypeScript patterns that will help you write more maintainable and type-safe code.',
-      date: '2024-01-05',
-      readingTime: 10,
-      category: 'TypeScript',
-      featured: false
-    },
-    {
-      slug: 'fullstack-deployment-strategies',
-      title: 'Full-Stack Deployment Strategies in 2024',
-      description:
-        'A comprehensive guide to deploying modern full-stack applications with CI/CD pipelines and container orchestration.',
-      date: '2024-01-01',
-      readingTime: 15,
-      category: 'DevOps',
-      featured: false
-    }
-  ];
-
-  const featuredPosts = blogPosts.filter((post) => post.featured);
-  const recentPosts = blogPosts.filter((post) => !post.featured);
+  // Get blog posts from server-loaded data
+  const blogPosts: BlogPost[] = data.blogPosts;
+  const featuredPosts = blogPosts.filter((post: BlogPost) => post.featured);
+  const recentPosts = blogPosts.filter((post: BlogPost) => !post.featured);
 
   onMount(() => {
     // Animate hero section
@@ -111,7 +89,7 @@
   />
 </svelte:head>
 
-<div class="dark:bg-dark-theme min-h-screen bg-white text-gray-900 dark:text-white">
+<div class="dark:bg-dark-theme min-h-screen text-gray-900 dark:text-white">
   <!-- Hero Section -->
   <section class="blog-hero px-6 pt-24 pb-16">
     <div class="mx-auto max-w-6xl text-center">
@@ -160,7 +138,7 @@
                       {formatDate(post.date)}
                     </time>
                     <span
-                      class="font-outfit text-sm text-gray-600 transition-transform hover:underline group-hover:translate-x-1 dark:text-blue-400"
+                      class="font-outfit text-sm text-gray-600 transition-transform group-hover:translate-x-1 hover:underline dark:text-blue-400"
                     >
                       Read more →
                     </span>
@@ -211,7 +189,7 @@
                       {formatDate(post.date)}
                     </time>
                     <span
-                      class="font-outfit text-sm text-gray-600 hover:underline transition-transform group-hover:translate-x-1 dark:text-blue-400"
+                      class="font-outfit text-sm text-gray-600 transition-transform group-hover:translate-x-1 hover:underline dark:text-blue-400"
                     >
                       Read more →
                     </span>
@@ -240,20 +218,20 @@
           class="font-outfit dark:bg-dark-hover/30 flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-white/20 dark:text-white dark:placeholder-gray-400"
         />
         <button
-          class="font-outfit rounded-full bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800 cursor-pointer"
+          class="font-outfit cursor-pointer rounded-full bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
           disabled={subscribing}
           onclick={() => {
             subscribing = true;
-            
-            let interval_id = setInterval(() => {              
-              if (subscribe_text === 'subscribed!'){                
+
+            let interval_id = setInterval(() => {
+              if (subscribe_text === 'subscribed!') {
                 subscribe_text = '';
                 clearInterval(interval_id);
-              }else{
+              } else {
                 subscribe_text = 'subscribed!';
                 subscribing = false;
               }
-            }, 2000);            
+            }, 2000);
           }}
         >
           {subscribing ? 'Subscribing' : 'Subscribe'}
@@ -261,8 +239,8 @@
       </div>
     </div>
   </section>
-  
-  <p class="text-center text-lg font-ovo pt-5">{subscribe_text}</p>
+
+  <p class="font-ovo pt-5 text-center text-lg">{subscribe_text}</p>
 </div>
 
 <style>
