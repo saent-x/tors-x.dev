@@ -6,8 +6,6 @@ readingTime: 10
 category: 'TypeScript'
 ---
 
-# Advanced TypeScript Patterns That Actually Matter
-
 TypeScript isn't just JavaScript with types sprinkled on top. It's a powerful tool that can catch bugs before they happen and make your code more self-documenting. Let's dive into the patterns that will level up your TypeScript game.
 
 ## Smart Type Checking with Conditional Types

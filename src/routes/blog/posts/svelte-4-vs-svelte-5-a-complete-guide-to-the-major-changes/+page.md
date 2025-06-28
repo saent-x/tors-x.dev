@@ -7,7 +7,6 @@ category: 'Svelte'
 featured: true
 ---
 
-# Svelte 4 vs Svelte 5: A Complete Guide to the Major Changes
 
 Svelte 5 represents a significant evolution in the Svelte ecosystem, introducing a fundamentally new reactivity system and several breaking changes that modernize the framework. While Svelte 4 served developers well with its compile-time optimizations and intuitive syntax, Svelte 5 takes reactivity to the next level with runes and improved performance characteristics.
 

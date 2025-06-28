@@ -39,12 +39,14 @@
     });
 
     // Animate featured posts
-    animate('.featured-posts', { y: 40, opacity: 0 });
-    inView('.featured-posts', (el) => {
-      animate(el, { y: 0, opacity: 1 }, { duration: 0.8, delay: 0.2 });
-      return () => animate(el, { y: 40, opacity: 0 });
-    });
-
+    if(featuredPosts.length > 0){
+      animate('.featured-posts', { y: 40, opacity: 0 });
+      inView('.featured-posts', (el) => {
+        animate(el, { y: 0, opacity: 1 }, { duration: 0.8, delay: 0.2 });
+        return () => animate(el, { y: 40, opacity: 0 });
+      });
+    }
+    
     // Animate recent posts
     animate('.recent-posts', { y: 40, opacity: 0 });
     inView('.recent-posts', (el) => {
@@ -111,7 +113,7 @@
         <div class="grid gap-8 md:grid-cols-2">
           {#each featuredPosts as post (post.slug)}
             <article class="post-card group">
-              <a href="/blog/{post.slug}" class="block">
+              <a href="/blog/posts/{post.slug}" class="block">
                 <div
                   class="dark:bg-dark-hover/30 h-full rounded-lg border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-gray-300 hover:shadow-lg dark:border-white/10 dark:hover:border-white/20 dark:hover:shadow-white/5"
                 >
@@ -160,7 +162,7 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {#each recentPosts as post (post.slug)}
             <article class="post-card group">
-              <a href="/blog/{post.slug}" class="block">
+              <a href="/blog/posts/{post.slug}" class="block">
                 <div
                   class="dark:bg-dark-hover/20 h-full rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-gray-300 hover:shadow-md dark:border-white/10 dark:hover:border-white/20 dark:hover:shadow-white/5"
                 >

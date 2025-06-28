@@ -60,7 +60,7 @@ function parseFrontmatter(content: string): MarkdownContent {
 
 export const load: PageServerLoad = async () => {
   try {
-    const blogDir = 'src/routes/blog';
+    const blogDir = process.env.NODE_ENV == "production" ? 'blog/posts' : 'src/routes/blog/posts';
 
     const entries = await readdir(blogDir, { withFileTypes: true });
 
